@@ -1,148 +1,482 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grupo de Ofertas para Noivas</title>
-<style>
-  :root{
-    --ivory:#FBF6F0;
-    --blush:#E8C4C4;
-    --wine:#7A3B46;
-    --gold:#B08D57;
-    --ink:#2E2422;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  body{
-    font-family:'Georgia', 'Times New Roman', serif;
-    background: var(--ivory);
-    color: var(--ink);
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:24px;
-  }
-  .card{
-    max-width:460px;
-    width:100%;
-    background:#fff;
-    border-radius:2px;
-    box-shadow: 0 20px 60px rgba(122,59,70,0.15);
-    overflow:hidden;
-    position:relative;
-  }
-  .card::before{
-    content:"";
-    position:absolute;
-    top:0; left:0; right:0;
-    height:6px;
-    background: linear-gradient(90deg, var(--blush), var(--gold), var(--blush));
-  }
-  .content{
-    padding:48px 36px 40px;
-    text-align:center;
-  }
-  .eyebrow{
-    font-family: -apple-system, sans-serif;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-size: 11px;
-    color: var(--gold);
-    font-weight:600;
-    margin-bottom:18px;
-  }
-  h1{
-    font-size: 30px;
-    font-weight:400;
-    line-height:1.25;
-    color: var(--wine);
-    margin-bottom:14px;
-  }
-  h1 em{
-    font-style:italic;
-    color: var(--gold);
-  }
-  p.sub{
-    font-family: -apple-system, sans-serif;
-    font-size: 15px;
-    line-height:1.6;
-    color:#6b5d5a;
-    margin-bottom:28px;
-  }
-  .divider{
-    width:40px;
-    height:1px;
-    background:var(--blush);
-    margin:0 auto 28px;
-  }
-  ul{
-    list-style:none;
-    text-align:left;
-    margin-bottom:32px;
-    font-family: -apple-system, sans-serif;
-    font-size:14px;
-    color:var(--ink);
-  }
-  ul li{
-    padding:8px 0 8px 26px;
-    position:relative;
-  }
-  ul li::before{
-    content:"✓";
-    position:absolute;
-    left:0;
-    color:var(--gold);
-    font-weight:bold;
-  }
-  .cta{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    width:100%;
-    background: var(--wine);
-    color:#fff;
-    font-family: -apple-system, sans-serif;
-    font-weight:600;
-    font-size:16px;
-    text-decoration:none;
-    padding:16px 20px;
-    border-radius:2px;
-    transition: background .25s ease, transform .25s ease;
-  }
-  .cta:hover{
-    background:#5f2c35;
-    transform: translateY(-2px);
-  }
-  .cta svg{ width:20px; height:20px; flex-shrink:0; }
-  .footnote{
-    margin-top:18px;
-    font-family: -apple-system, sans-serif;
-    font-size:11px;
-    color:#a89892;
-    letter-spacing:0.5px;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Planeje o seu Sim | Ofertas 💍</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffaf8;
+      color: #403432;
+      line-height: 1.6;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 20px;
+      background:
+        radial-gradient(circle at 10% 10%, #f4dfe2 0%, transparent 35%),
+        radial-gradient(circle at 90% 90%, #ead8d1 0%, transparent 35%),
+        #fffaf8;
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ead1d4;
+      color: #704c51;
+      padding: 9px 18px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(44px, 6vw, 72px);
+      line-height: 1.04;
+      font-weight: normal;
+      color: #483a38;
+      margin-bottom: 23px;
+    }
+
+    h1 span {
+      color: #a66d74;
+      font-style: italic;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #6e605d;
+      max-width: 540px;
+      margin-bottom: 30px;
+    }
+
+    .cta {
+      display: inline-block;
+      text-decoration: none;
+      background: #8d5961;
+      color: #fff;
+      padding: 18px 34px;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 12px 30px rgba(141,89,97,.25);
+      transition: .3s;
+    }
+
+    .cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 17px 35px rgba(141,89,97,.35);
+    }
+
+    .small {
+      margin-top: 13px;
+      font-size: 13px;
+      color: #897a76;
+    }
+
+    .card {
+      background: rgba(255,255,255,.85);
+      border: 1px solid #eadbd8;
+      border-radius: 30px;
+      padding: 35px;
+      box-shadow: 0 25px 70px rgba(90,65,58,.10);
+    }
+
+    .card-title {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      margin-bottom: 22px;
+      color: #513f3c;
+    }
+
+    .benefit {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      padding: 17px 0;
+      border-bottom: 1px solid #eee2df;
+    }
+
+    .benefit:last-child {
+      border-bottom: none;
+    }
+
+    .icon {
+      min-width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #f4e3e4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 21px;
+    }
+
+    .benefit strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 3px;
+    }
+
+    .benefit p {
+      font-size: 14px;
+      color: #776a66;
+    }
+
+    .section {
+      padding: 90px 20px;
+      background: #fff;
+    }
+
+    .section-content {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-family: Georgia, serif;
+      font-size: 42px;
+      font-weight: normal;
+      color: #4b3b38;
+      margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+      color: #786965;
+      max-width: 620px;
+      margin: 0 auto 45px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 22px;
+    }
+
+    .mini-card {
+      padding: 30px 22px;
+      border-radius: 22px;
+      background: #fff8f6;
+      border: 1px solid #f0dfdc;
+    }
+
+    .emoji {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .mini-card h3 {
+      margin-bottom: 8px;
+      font-family: Georgia, serif;
+      font-size: 22px;
+    }
+
+    .mini-card p {
+      color: #776965;
+      font-size: 14px;
+    }
+
+    .final {
+      padding: 90px 20px;
+      text-align: center;
+      background: #f4e5e4;
+    }
+
+    .final h2 {
+      font-family: Georgia, serif;
+      font-size: 43px;
+      font-weight: normal;
+      color: #493b39;
+      margin-bottom: 15px;
+    }
+
+    .final p {
+      max-width: 570px;
+      margin: 0 auto 30px;
+      color: #6f5c58;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #3f3331;
+      color: #eadfdd;
+      font-size: 13px;
+    }
+
+    @media(max-width:800px) {
+
+      .hero {
+        padding: 40px 18px;
+      }
+
+      .container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+
+      .subtitle {
+        font-size: 17px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 27px 22px;
+      }
+
+      .section h2,
+      .final h2 {
+        font-size: 34px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <div class="card">
-    <div class="content">
-      <div class="eyebrow">Achadinhos para noivas</div>
-      <h1>Os melhores <em>achadinhos</em><br>pro seu casamento</h1>
-      <p class="sub">Entre no grupo do WhatsApp e receba todo dia achadinhos, promoções relâmpago e cupons pra economizar na sua festa.</p>
-      <div class="divider"></div>
-      <ul>
-        <li>Achadinhos novos direto no seu WhatsApp</li>
-        <li>Promoções relâmpago e cupons exclusivos</li>
-        <li>Sem spam, só achadinho bom</li>
-      </ul>
-      <a class="cta" href="https://chat.whatsapp.com/JCkV0hDPHHB2z9Zuvsugq3ba" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.79 14.04c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2 .9 2.14.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.36 1.46.3.15.47.13.65-.08.18-.2.75-.87.95-1.17.2-.29.4-.24.66-.14.27.1 1.7.8 1.99.95.29.14.48.21.55.33.07.12.07.68-.17 1.36z"/></svg>
-        Entrar no grupo agora
-      </a>
-      <div class="footnote">Vagas limitadas · grupo oficial de achadinhos</div>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="container">
+
+      <div>
+
+        <div class="badge">
+          💍 GRUPO EXCLUSIVO PARA NOIVAS
+        </div>
+
+        <h1>
+          Seu casamento pode ser lindo
+          <span>sem gastar uma fortuna.</span>
+        </h1>
+
+        <p class="subtitle">
+          Descubra os <strong>achadinhos que toda noiva precisa conhecer</strong>:
+          produtos lindos, úteis e oportunidades para deixar o seu casamento
+          ainda mais especial — gastando menos. ✨
+        </p>
+
+        <a
+          href="https://chat.whatsapp.com/JCkV0hDPHHB2z9Zuvsugq3?s=cl&p=i&mlu=4&amv=1"
+          class="cta"
+          target="_blank"
+        >
+          💚 QUERO ENTRAR NO GRUPO
+        </a>
+
+        <p class="small">
+          ✨ Entrada gratuita • Ofertas selecionadas • Conteúdo para noivas
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-title">
+          O que você vai encontrar? 💕
+        </div>
+
+        <div class="benefit">
+
+          <div class="icon">🛍️</div>
+
+          <div>
+            <strong>Achadinhos incríveis</strong>
+            <p>
+              Produtos lindos e úteis para o casamento,
+              casa nova e vida a dois.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <div class="icon">💰</div>
+
+          <div>
+            <strong>Ofertas e oportunidades</strong>
+            <p>
+              Descubra produtos que podem ajudar você
+              a economizar durante os preparativos.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <div class="icon">🎀</div>
+
+          <div>
+            <strong>Inspirações para o grande dia</strong>
+            <p>
+              Ideias de decoração, lembrancinhas,
+              acessórios e detalhes especiais.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <div class="icon">🏡</div>
+
+          <div>
+            <strong>Achadinhos para a casa</strong>
+            <p>
+              Encontre itens para montar seu cantinho
+              e começar a vida a dois.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
-  </div>
+
+  </section>
+
+
+  <!-- CATEGORIAS -->
+
+  <section class="section">
+
+    <div class="section-content">
+
+      <h2>
+        Tudo que uma noiva
+        <br>
+        ama encontrar. ✨
+      </h2>
+
+      <p class="section-subtitle">
+        Um espaço para descobrir produtos, inspirações
+        e oportunidades que podem facilitar sua jornada
+        até o tão sonhado “sim”.
+      </p>
+
+
+      <div class="cards">
+
+        <div class="mini-card">
+
+          <div class="emoji">💒</div>
+
+          <h3>Para o casamento</h3>
+
+          <p>
+            Decoração, papelaria, lembrancinhas,
+            acessórios e detalhes para o grande dia.
+          </p>
+
+        </div>
+
+
+        <div class="mini-card">
+
+          <div class="emoji">🛍️</div>
+
+          <h3>Achadinhos</h3>
+
+          <p>
+            Produtos que encontramos e pensamos:
+            “isso toda noiva precisa conhecer!”
+          </p>
+
+        </div>
+
+
+        <div class="mini-card">
+
+          <div class="emoji">🏠</div>
+
+          <h3>Casa nova</h3>
+
+          <p>
+            Itens para cozinha, quarto, organização,
+            decoração e muito mais.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA FINAL -->
+
+  <section class="final">
+
+    <h2>
+      Seu “sim” já está chegando. 🤍
+    </h2>
+
+    <p>
+      Agora falta só você entrar para o nosso grupo
+      e começar a descobrir os achadinhos que podem
+      deixar essa fase ainda mais especial.
+    </p>
+
+    <a
+      href="https://chat.whatsapp.com/JCkV0hDPHHB2z9Zuvsugq3?s=cl&p=i&mlu=4&amv=1"
+      class="cta"
+      target="_blank"
+    >
+      💚 ENTRAR NO GRUPO GRATUITO
+    </a>
+
+  </section>
+
+
+  <footer>
+    Planeje o seu sim | Ofertas 🛍️💍✨
+    <br>
+    Feito com amor para futuras noivas.
+  </footer>
+
 </body>
 </html>
+```
+
